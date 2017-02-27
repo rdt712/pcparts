@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Search Parts" ng-model="partListController.searchText">
+        </div>
+    </div>
+    <br />
+    <div ng-repeat="part in partListController.parts | filter:partListController.searchText">
+        <pc-part ng-click="partListController.goToDetail(part)" part="part"></pc-part>
+    </div>
+</div>

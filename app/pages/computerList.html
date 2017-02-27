@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Search Computers" ng-model="computerListController.searchText">
+    </div>
+</div>
+<br />
+<div ng-repeat="computer in computerListController.computers | filter:computerListController.searchText">
+    <pc-computer ng-click="computerListController.goToDetail(computer)" computer="computer"></pc-computer>
+</div>

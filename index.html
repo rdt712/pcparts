@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="pcParts">
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>PC Parts</title>
+
+    <!-- build:css css/style.css -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- endbuild -->
+
+    <!-- build:js main.js -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.routes.js"></script>
+
+    <!-- inject:js -->
+    <!-- <script src="app/templates.js"></script> -->
+    <script src="app/components/part.js"></script>
+    <script src="app/components/computer.js"></script>
+    <script src="app/controllers/PartDetailController.js"></script>
+    <script src="app/controllers/PartListController.js"></script>
+    <script src="app/controllers/HomeController.js"></script>
+    <script src="app/controllers/ComputerDetailController.js"></script>
+    <script src="app/controllers/ComputerListController.js"></script>
+    <script src="app/services/static/partDataManager.js"></script>
+    <script src="app/services/static/computerDataManager.js"></script>
+    <script src="app/services/partService.js"></script>
+    <script src="app/services/computerService.js"></script>
+    <script src="app/services/accountService.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- Dev dependency -->
+    <script src="node_modules/ng-stats/dist/ng-stats.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" ui-sref="home">PC Parts</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="partList">Parts</a></li>
+                    <li><a ui-sref="computerList">Computers</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div ui-view=""></div>
+    </div>
+
+    <!-- <script>
+        setTimeout(function() {
+            var ngStats = showAngularStats();
+        });
+    </script> -->
+</body>
+
+</html>
